@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop js</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box; 
+        }
+        h1{text-align: center; background-color: brown; color: white;}
+        h2{ font-size: larger;text-align: center; height: 50px; width: 100%;}
+        body{background-color: aquamarine;}
+        main {background-color: aqua; width: 100%;  }
+        div{color: black;
+             float: left;/* text-align: center; */
+            padding: 50px;
+            width: 33.33%; min-height: 300px;
+           }
+           input{width: 100%; height: 30px; text-align: center;}
+           .halfwidth{width: 130px;}
+        p{font-size: larger; }
+        /* h2{ background-color: #efefef;border-radius: 10px; margin: 2px;
+            box-shadow: -1px -1px 15px 2px white, 1px 1px 15px -5px #001224,
+             inset -15px -15px 15px -20px #000000,inset 5px 5px 15px 5px white;
+        } */
+        button{
+            width: 100%;height: 50px; 
+        }
+        #lout{width: 70px; margin: 50px 50%;}
+        #lpout{width: 10px; margin: 50px 5%;}
+        aside{width: 100%; }
+        #a5{padding-left: 1px;padding-right: 100px;}
+        #a4{padding-right: 1px;padding-left: 100px;}
+        #a6{padding-right: 1px;padding-left: 100px;}
+        #a14{width: 100%; text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>loop in loop</h1>
+    
+    <div id="a1">
+        <h2>Loop Loop piramid</h2>
+        <input type="text" id="nump" placeholder="input start ">
+        <button onclick="lpp()"> click hear<p id="lpout"></p></button>
+        <script>
+            function lpp() {
+                var star='',inp,a;
+                inp=document.getElementById("nump").value;inp=parseInt(inp);
+                for (let i = 0; i < inp; i++) {
+                    for (let j = 0; j <= i; j++) {
+                        console.log("*")  
+                        star+='*';
+                    }
+                    star+="<br>";
+                }
+                 document.getElementById("lpout").innerHTML=star;
+                 
+                 
+            }
+                        // document.write("*"+''); // document.write("<br>" + '  '); 
+        </script>
+    </div>
+    <div id="a2">
+        <h2>Loop Loop</h2>
+        <input onchange="lpf()" type="text" id="numl" placeholder="input start print">
+        <p id="loopout"></p>
+        <script>
+            function lpf() {
+                var star='',inp,a;
+                inp=document.getElementById("numl").value;inp=parseInt(inp);
+                for (let i = 0; i < inp; i++) {
+                    for (let j = 0; j <= i; j++) {
+                        console.log("*")  
+                        star+='*';
+                    }
+                    star+="<br>";
+                }
+                 document.getElementById("loopout").innerHTML=star;
+                 
+                 
+            }
+                        // document.write("*"+''); // document.write("<br>" + '  '); 
+        </script>
+    </div>
+    <div id="a3">
+        <h2>Loop in Loop in if else</h2>
+        <input type="text" id="num" placeholder="input start streass">
+        <button onclick="loopf()"><p id="lout"></p></button>
+        <script>
+            function loopf() {
+                var star='',inp,a;
+                inp=document.getElementById("num").value;inp=parseInt(inp);
+
+                for (let l = 0; l <= inp; l++) {
+                    for (let i = 0; i < 2; i++) {
+                        star+='*'; 
+                    if(i<1){
+                        for (let m = 0; m <= l*5; m++) {
+                            star+='&nbsp&nbsp';   // document.write("&nbsp&nbsp")
+                           }
+                        for (let j = 0; j <= 5; j++) {
+                            star+='#';   // document.write("#")
+                           }
+                      }
+                    else{
+                        for (let m = 0; m <= l*5; m++) {
+                            star+='&nbsp&nbsp';   // document.write("&nbsp&nbsp")
+                            }
+                        for (let j = 0; j <= 5; j++) {
+                            star+='#';    // document.write("#")
+                        }
+                      }
+                        // document.write("<br>")&nbsp
+                        star+="<br>";  // document.write("<br>")
+                    } //document.write("<br><br>2")
+                    // star+=2;
+                 }
+                    document.getElementById("lout").innerHTML=star;    
+            }  
+                        // document.write("*"+''); // document.write("<br>" + '  '); 
+        </script>
+    </div> 
+    <aside onmouseout="word()"><h2>My name  word</h2>
+    <div id="a4"><p id="kout"></p></div>
+    <div id="a5"><p id="aout"></p> </div>
+    <div id="a6"><p id="rout"></p></div>
+    <div id="a7"><p id="mout"></p></div>
+    <div id="a8"><p id="vout"></p></div>
+    <div id="a9"><p id="eout"></p></div>
+    <div id="a10"><p id="eeout"></p></div>
+    <div id="a11"><p id="rrout"></p></div></aside>
+    <div id="a12"><p id="sout"></p></div>
+        <script>
+            function word() {
+                //  kkkkkkkkkkkkkkkkkkkk  KKKKKKKKKKKKK
+                var star='';
+                for (let i = -10; i < 10; i++) {
+                    for (let j = 0; j < 10; j++) {
+                        if (j<1) {
+                            star+='K'; 
+                        }
+                        else if(-i==j) {
+                            star+='K'; 
+                        } 
+                        else if(i==j) {
+                            star+='K'; 
+                        } 
+                        else{star+='&nbsp&nbsp&nbsp&nbsp'; }
+                    }
+                    star+="<br>"; 
+                }document.getElementById("kout").innerHTML=star;
+
+                // aaaaaaaaaaaaa AAAAAAAAAAAAAAAAAAA
+                       
+                var stara='';
+                for (let i = 0; i > -20; i--) {
+                    for (let j = -20; j < 20; j++){
+                        if (j==0 && i==0 ) {
+                            stara+='A'; 
+                        }
+                        else if(j==10){
+                            stara+='&nbsp'; }
+                        else if(-i==j) {
+                            stara+='A'; 
+                        }
+                        // else if(i==-j) {
+                        //     stara+='B'; 
+                        // } // else if(i==j) {
+                        //     stara+='D'; } 
+                        // else if(j==0 || i==0 ) {
+                        //     stara+='&nbsp&nbsp&nbsp'; } 
+                        
+                        else if(-i==-j) {
+                            stara+='A'; 
+                        } 
+                        else if(i==-10 &&(j<5 && j>-10) )
+                        {
+                            stara+='A'; 
+                        }
+                        else{stara+='&nbsp&nbsp'; }
+                    }
+                    stara+="<br>"; 
+                }document.getElementById("aout").innerHTML=stara;
+
+                //rrrrrrrrrrrrrrrrr    RRRRRRRRRRRRRRRRR
+                var starr='';
+                for (let i = 10; i > -12; i--) {
+                    for (let j = 0; j < 15; j++)  {
+                        if (j==0 || i==0 ) {
+                            starr+='R'; 
+                        }
+                        else if(-i==j) {
+                            starr+='R'; 
+                        }
+                        else if (i==10 ) {
+                            starr+='R'; 
+                        }
+                        else if (j==10 && i>0 ) {
+                            starr+='R'; 
+                        }
+                        // else if(-i==-j) {
+                        //     starr+='R'; 
+                        // }
+                        else{starr+='&nbsp&nbsp&nbsp&nbsp'; }
+                    }
+                    starr+="<br>"; 
+                }document.getElementById("rout").innerHTML=starr; 
+                document.getElementById("rrout").innerHTML=starr; 
+
+                //mmmmmmmmmmmmmmmmm    MMMMMMMMMMMMMMMMM
+                var starm='';
+                for (let i = 9; i > -10; i--) {
+                    for (let j = -12; j < 12; j++)  {
+                        if (j==0 && i==0 ) {
+                            starm+='M'; 
+                        }
+                        else if(-i==j && i>0) {
+                            starm+='M'; 
+                        }
+                        else if(-i==-j && i>0) {
+                            starm+='M'; 
+                        }
+                        else if(-j==10 || j==10) {
+                            starm+='M'; 
+                        }
+                        else{starm+='&nbsp&nbsp&nbsp'; }
+                    }
+                    starm+="<br>"; 
+                }document.getElementById("mout").innerHTML=starm;
+
+                //vvvvvvvvvvvvvvvvvvvv   VVVVVVVVVVVVVVVVV
+                var starv='';
+                for (let i = 20; i > -1; i--) {
+                    for (let j = -20; j < 21; j++)  {
+                        if (j==0 && i==0 ) {
+                            starv+='V'; 
+                        }
+                        else if(-i==j) {
+                            starv+='V'; 
+                        }
+                        else if(-i==-j) {
+                            starv+='V'; 
+                        }
+                        else{starv+='&nbsp&nbsp'; }
+                    }
+                    starv+="<br>"; 
+                }document.getElementById("vout").innerHTML=starv; 
+
+                // EEEEEEEEEEEEEE          eeeeeeeeeeeee
+                var stare='';
+                for (let i = 10; i > -11; i--) {
+                    for (let j = 0; j < 20; j++)  {
+                        if (j==0 || i==0 ) {
+                            stare+='E'; 
+                        }
+                        else if(i==10) {
+                            stare+='E'; 
+                        }
+                        else if(i==-10) {
+                            stare+='E'; 
+                        }
+                        else{stare+='&nbsp&nbsp'; }
+                    }
+                    stare+="<br>"; 
+                }document.getElementById("eout").innerHTML=stare;  
+                document.getElementById("eeout").innerHTML=stare;  
+
+                //sssssssssssss SSSSSSSSSSSSSSSSSSS
+                var stars='';
+                for (let i = 10; i > -11; i--) {
+                    for (let j = -7; j < 7; j++)  {
+                        if ((j==0 && i==0) || i==0 ) {
+                            stars+='S&nbsp'; 
+                        }
+                        else if(i==10 || i==-10) {
+                            stars+='S&nbsp'; 
+                        }
+                        else if(j==6 && i<0) {
+                            stars+='S'; 
+                        }
+                        else if(-j==7 && i>0) {
+                            stars+='S'; 
+                        }
+                        else{stars+='&nbsp&nbsp&nbsp'; }
+                    }
+                    stars+="<br>"; 
+                }document.getElementById("sout").innerHTML=stars;
+            }
+
+        </script>
+    <aside></aside>
+    <div id="a13"><p id="out"></p></div>
+    <div id="a14"><h2 onmouseout="grph()">grafph</h2><p id="gout"></p> </div>
+    <div id="a15"><p id="out"></p> </div>
+       <script>
+           function grph() {
+            var starv='';
+                for (let i = 10; i > -11; i--) {
+                    for (let j = -10; j < 11; j++)  {
+                        if (j==0 || i==0 ) {
+                            starv+='#'; 
+                        }
+                        else if (j==0 && i==0 ) {
+                            starv+='0'; 
+                        }
+                        else if(j==i ){
+                            starv+='@';
+                        }
+                        else if(j==-i && -j==i){
+                            starv+='&';
+                        }
+                        else{starv+='.&nbsp'; }
+                    }
+                    starv+="<br>"; 
+                }document.getElementById("gout").innerHTML=starv;   
+            }
+       </script> 
+</body>
+</html>
+<!-- if (l<1) {}
+//  else if(l < 2){
+//         for (let i = 0; i < 2; i++) {
+//             for (let j = 0; j <= 10; j++) {
+//                 // console.log("*") 
+//                 document.write("*")
+//             }
+//             document.write("<br>")
+//         }
+//  }
+//  else if(l < 3){
+//         for (let i = 0; i < 2; i++) {
+//             for (let j = 0; j <= 15; j++) {
+//                 // console.log("*") 
+//                 document.write("*")
+//             }
+//             document.write("<br>")
+//         }
+//  }
+//  else if(l < 4){
+//         for (let i = 0; i < 2; i++) {
+//             for (let j = 0; j <= 20; j++) {
+//                 // console.log("*") 
+//                 document.write("*")
+//             }
+//             document.write("<br>")
+//         }
+//  }
+//  else if(l < 5){
+//         for (let i = 0; i < 2; i++) {
+//             for (let j = 0; j <= 25; j++) {
+//                 // console.log("*") 
+//                 document.write("*")
+//             }
+//             document.write("<br>")
+//         }
+//  }
+//  else if(l < 6){
+//         for (let i = 0; i < 2; i++) {
+//             for (let j = 0; j <= 30; j++) {
+//                 // console.log("*") 
+//                 document.write("*")
+//             }
+//             document.write("<br>")
+//         }
+//  }
+//  else{} -->
